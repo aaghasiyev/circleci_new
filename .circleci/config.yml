@@ -11,28 +11,29 @@ jobs:
       - run: python main.py
   unit_test:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:2.7
     steps:
       - checkout
       - run: echo "Unit testing"
   stress_test:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:2.7
     steps:
       - checkout
       - run: echo "Stress testing"    
   e2e_test:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:2.7
     steps:
       - checkout
       - run: echo "End-to-end testing" 
   deploy:
     docker:
-      -image: cimg/python:3.8
+      -image: cimg/python:2.7
     step:
       - checkout
       - run: echo "Deploying application..."   
+
 # Orchestrate our job run sequence
 workflows:
   build_and_test:
